@@ -1,0 +1,88 @@
+html, body {
+	font-family: 'Open Sans';
+	margin: 0;
+	overflow: hidden;
+	zoom: 100%;
+}
+
+b {
+	font-size: 20px;
+	font-weight: 400;
+}
+
+small {
+	font-size: 12px;
+}
+
+.animation-slide-up {
+	animation-duration: 6000ms;
+	animation-fill-mode: forwards;
+	animation-name: slide-up;
+	animation-timing-function: cubic-bezier(0.81, 0.08, 0.56, 0.9);
+	-webkit-animation-duration: 6000ms;
+	-webkit-animation-fill-mode: forwards;
+	-webkit-animation-name: slide-up;
+	-webkit-animation-timing-function: cubic-bezier(0.81, 0.08, 0.56, 0.9);
+}
+
+.message {
+	background-color: rgba(0, 0, 0, 0.7);
+	bottom: 0;
+	color: white;
+	font-size: 28px;
+	font-weight: 300;
+	min-height: 70px;
+	overflow: hidden;
+	padding: 10px;
+	position: absolute;
+	width: 95%;
+	word-break: break-all;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+.time {
+	margin-right: 10px;
+}
+
+@keyframes slide-up {
+	0% {
+		bottom: 0;
+		opacity: 0;
+	}
+	10% {
+		bottom: 0;
+		opacity: 1;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		bottom: 100%;
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes slide-up {
+	0% {
+		bottom: 0;
+		opacity: 0;
+	}
+	10% {
+		bottom: 0;
+		opacity: 1;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		bottom: 100%;
+		opacity: 0;
+	}
+}
