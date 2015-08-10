@@ -1,12 +1,25 @@
+defaults =
+	channel: 'hatsuney'
 lastMessageTime = 0
+urlVars = {}
+
+window.location.href.replace /[?&]+([^=&]+)=([^&]*)/gi, (m, key, value) =>
+	urlVars[key] = value
+
+getOption = (optionName) ->
+	if urlVars[optionName]?
+		urlVars[optionName]
+	else if defaults[optionName]?
+		defaults[optionName]
+	else null
 
 tmi = new irc.client
 	options:
 		debug: true
-	channels: ['hatsuney']
+	channels: [getOption('channel')]
 
 tmi.on 'connected', =>
-	console.log 'yay'
+	tmi.emit 'message', {}, {username: 'Mikuchat'}, 'Connected!', null
 
 tmi.on 'message', (channel, user, message, self) =>
 	setTimeout () =>
@@ -21,13 +34,9 @@ tmi.on 'message', (channel, user, message, self) =>
 
 	lastMessageTime += 1500
 
-	console.log channel
-	console.log user
-	console.log message
-
 tmi.connect()
 
-tmi.emit 'message', {}, {username: 'whatever'}, 'hello', null
+tmi.emit 'message', {}, {username: 'Mikuchat'}, 'Hi there! Connecting to #' + getOption('channel') + '...', null
 
 setInterval () =>
 	lastMessageTime -= 500
