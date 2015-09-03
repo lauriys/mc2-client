@@ -25,6 +25,10 @@ small {
 	-webkit-animation-timing-function: cubic-bezier(0.81, 0.08, 0.56, 0.9);
 }
 
+.img-circle {
+	border-radius: 100px;
+}
+
 .message {
 	background-color: rgba(0, 0, 0, 0.7);
 	bottom: 0;
@@ -35,7 +39,7 @@ small {
 	overflow: hidden;
 	padding: 10px;
 	position: absolute;
-	width: 95%;
+	width: 100%;
 	word-break: break-all;
 }
 
@@ -48,7 +52,7 @@ small {
 }
 
 .time {
-	margin-right: 10px;
+	margin-right: 30px;
 }
 
 @keyframes slide-up {

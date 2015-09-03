@@ -1,5 +1,6 @@
 defaults =
 	channel: 'hatsuney'
+	subs: []
 lastMessageTime = 0
 urlVars = {}
 
@@ -21,12 +22,25 @@ tmi = new irc.client
 tmi.on 'connected', =>
 	tmi.emit 'message', {}, {username: 'Mikuchat'}, 'Connected!', null
 
+	if urlVars.subs?
+		urlVars.subs = urlVars.subs.split ','
+
 tmi.on 'message', (channel, user, message, self) =>
 	setTimeout () =>
+		subUser = user.username in getOption('subs')
+		colors = {}
+		if subUser
+			console.log user
+			if user.color?
+				colors = hexToRgb shadeBlend 0.6, user.color, '#000000'
+			else
+				colors = hexToRgb shadeBlend 0.6, '#ffffff', '#000000'
+
 		$('body').append ' \
-			<span class="message animation-slide-up" style="border-left: 5px solid ' + user.color + ';"> \
+			<span class="message ' + (if subUser then 'subscriber ' else '') + 'animation-slide-up" style="' + (if subUser then 'background-color: rgba(' + colors.r + ', ' + colors.g + ', ' + colors.b + ', ' + '0.7); border: 2px solid ' + user.color + '; ' else '') + 'border-left: 5px solid ' + user.color + ';"> \
 				<small class="pull-right time">' + moment().format('HH:mm') + '</small> \
-				<b class="pull-left" style="padding-left: 3px;">' + user.username + '</b> \
+				' + (if subUser then '<div class="pull-left"><img class="img-circle" src="http://mikuia.tv/img/avatars/' + user.username + '.jpg" width="28" height="28" /></div> ' else '') + ' \
+				<b class="pull-left" style="padding-left: 3px;"> ' + (if subUser then user['display-name'] else user.username) + '</b> \
 				<br /> \
 				' + message.replace(/(<([^>]+)>)/ig,"") + ' \
 			</span>'
