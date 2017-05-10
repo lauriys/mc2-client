@@ -141,7 +141,7 @@ chat.on('chat', (channel, userstate, message, self) => {
 			<br />' + message + '</span>');
 	
 	setTimeout(() => {
-		$('#message_' + randomId).addClass('slideOutRight);')
+		$('#message_' + randomId).addClass('slideOutRight');
 	}, 2500);
 
 	setTimeout(() => {
