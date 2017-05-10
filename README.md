@@ -9,4 +9,5 @@ You use it like this:
 4. That's it.
 
 It looks something like this:  
+![so cool](http://h.hatsu.tv/RzsUxp.gif)  
 ![wow](http://h.hatsu.tv/axQBCx.png)
