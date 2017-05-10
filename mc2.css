@@ -1,5 +1,7 @@
-html, body {
-	font-family: 'Open Sans';
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&subset=latin-ext');
+
+body {
+	font-family: 'Lato';
 	margin: 0;
 	overflow: hidden;
 	zoom: 100%;
@@ -7,22 +9,28 @@ html, body {
 
 b {
 	font-size: 20px;
-	font-weight: 400;
+	font-weight: 700;
 }
 
 small {
 	font-size: 12px;
 }
 
-.animation-slide-up {
-	animation-duration: 6000ms;
-	animation-fill-mode: forwards;
-	animation-name: slide-up;
-	animation-timing-function: cubic-bezier(0.81, 0.08, 0.56, 0.9);
-	-webkit-animation-duration: 6000ms;
-	-webkit-animation-fill-mode: forwards;
-	-webkit-animation-name: slide-up;
-	-webkit-animation-timing-function: cubic-bezier(0.81, 0.08, 0.56, 0.9);
+#messages {
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+}
+
+.badge {
+	height: 28px;
+	padding-right: 5px;
+}
+
+.emote {
+	display: inline-block;
+	height: 28px;
+	vertical-align: middle;
 }
 
 .img-circle {
@@ -31,16 +39,17 @@ small {
 
 .message {
 	background-color: rgba(0, 0, 0, 0.7);
-	bottom: 0;
+	/*bottom: 0;*/
 	color: white;
+	display: block;
 	font-size: 28px;
 	font-weight: 300;
 	min-height: 70px;
 	overflow: hidden;
 	padding: 10px;
-	position: absolute;
-	width: 100%;
-	word-break: break-all;
+	/*position: absolute;*/
+	/*width: 100%;*/
+	word-break: break-word;
 }
 
 .pull-left {
@@ -51,42 +60,6 @@ small {
 	float: right;
 }
 
-.time {
+/*.time {
 	margin-right: 30px;
-}
-
-@keyframes slide-up {
-	0% {
-		bottom: 0;
-		opacity: 0;
-	}
-	10% {
-		bottom: 0;
-		opacity: 1;
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		bottom: 100%;
-		opacity: 0;
-	}
-}
-
-@-webkit-keyframes slide-up {
-	0% {
-		bottom: 0;
-		opacity: 0;
-	}
-	10% {
-		bottom: 0;
-		opacity: 1;
-	}
-	50% {
-		opacity: 1;
-	}
-	100% {
-		bottom: 100%;
-		opacity: 0;
-	}
-}
+}*/
