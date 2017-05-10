@@ -5,8 +5,9 @@ You use it like this:
 1. Get OBS or XSplit, Windows Movie Maker or whatever the fuck else you're using for your stream as long as it supports browser sources.
 2. Put this as the URL:
 `http://chat.mikuia.tv/?channel=YOUR_CHANNEL_NAME`
-3. If you stream at 60 FPS, you can set the browser source FPS to 60 too, for extra smoothness.
-4. That's it.
+3. Put the width at something like 400, and height as high as you want (preferably put a bit out of screen).
+4. If you stream at 60 FPS, you can set the browser source FPS to 60 too, for extra smoothness.
+5. That's it.
 
 It looks something like this:  
 ![so cool](http://h.hatsu.tv/RzsUxp.gif)  
